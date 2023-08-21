@@ -1,0 +1,15 @@
+
+# Drop if shell is not interactive
+case $- in
+  *i*) ;;
+    *) return;;
+esac
+
+# Assert that this is a bash terminal
+if [ -z "${BASH_VERSION-}" ]; then
+  printf '%s\n' 'oh-my-bash: This is not a Bash. Use OMB with Bash 3.2 or higher.' >&2
+  return 1
+fi
+
+
+__REPO_PATH="$(pwd)"
