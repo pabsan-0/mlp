@@ -1,0 +1,1 @@
+alias gitcd='cd $(mlp_find_up .git)'
