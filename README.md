@@ -1,3 +1,21 @@
+# My little prompt 
+
+**WIP**
+
+This repo holds a sourceable bash environment! It packs:
+
+- Aliases
+- Completions
+- Config files (vim, tmux, vscode)
+- Templates
+- Prompts
+- Bash tools
+
+## Dependencies
+
+## Usage
+
+
 
 ```
 .
@@ -17,6 +35,5 @@
     ├── bundled.sh
     ├── install_dependencies.sh
     └── install_dotfiles.sh
-
 
 ```
