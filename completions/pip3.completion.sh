@@ -1,5 +1,3 @@
-#! bash oh-my-bash.module
-
 # pip bash completion start
 _pip_completion()
 {
@@ -8,4 +6,3 @@ _pip_completion()
                    PIP_AUTO_COMPLETE=1 $1 ) )
 }
 complete -o default -F _pip_completion pip3
-# pip bash completion end

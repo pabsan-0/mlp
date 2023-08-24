@@ -1,5 +1,3 @@
-#! bash oh-my-bash.module
-#
 # bash completion for docker-compose
 #
 # This work is based on the completion for the docker command.

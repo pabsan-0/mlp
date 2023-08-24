@@ -1,4 +1,3 @@
-#! bash oh-my-bash.module
 # Bash completion support for ssh.
 
 export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
