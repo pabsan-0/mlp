@@ -1,12 +1,12 @@
 # Drop if shell is not interactive
-case $- in
-  *i*) ;;
-    *) return;;
-esac
+# case $- in
+#   *i*) ;;
+#     *) return;;
+# esac
 
 # Assert that this is a bash terminal
 if [ -z "${BASH_VERSION-}" ]; then
-  printf '%s\n' 'oh-my-bash: This is not a Bash. Use OMB with Bash 3.2 or higher.' >&2
+  printf '%s\n' 'oh-my-bash: This is not a Bash. Use MLP with Bash 3.2 or higher.' >&2
   return 1
 fi
 
@@ -20,23 +20,17 @@ while [ -L "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 __REPO_PATH=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 
+# https://stackoverflow.com/questions/7120426/
+bash --rcfile <(echo ". ~/.bashrc             ; 
+    
+    __REPO_PATH=$__REPO_PATH                  ;
+    . $__REPO_PATH/lib/mlp.source.sh          ; 
 
-source $__REPO_PATH/aliases/configs.aliases.sh                    || exit 1
-source $__REPO_PATH/aliases/general.aliases.sh                    || exit 1
-source $__REPO_PATH/aliases/git.aliases.sh                        || exit 1
-
-source $__REPO_PATH/completions/docker-compose.completion.sh      || exit 1
-source $__REPO_PATH/completions/pip.completion.sh                 || exit 1
-source $__REPO_PATH/completions/pip3.completion.sh                || exit 1
-source $__REPO_PATH/completions/ssh.completion.sh                 || exit 1
-source $__REPO_PATH/completions/tmux.completion.sh                || exit 1
-
-source $__REPO_PATH/prompts/mlp.sh                                || exit 1
-
-source $__REPO_PATH/lib/mlp.sh                                    || exit 1
-source $__REPO_PATH/lib/prompt.sh                                 || exit 1
-source $__REPO_PATH/lib/prompt.sh                                 || exit 1
-
-
-
-source $__REPO_PATH/config/bash/.bashrc_extra.sh  
+    mlp_source_dir $__REPO_PATH/lib/          ;
+    mlp_source_dir $__REPO_PATH/aliases/      ;
+    mlp_source_dir $__REPO_PATH/completions/  ;
+    mlp_source_dir $__REPO_PATH/configs/      ;
+    mlp_source_dir $__REPO_PATH/templates/    ;
+    mlp_source_dir $__REPO_PATH/themes/       ;
+    mlp_source_dir $__REPO_PATH/themes/themes ;
+")
