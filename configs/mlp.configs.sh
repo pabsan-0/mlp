@@ -1,4 +1,5 @@
 # Straightforward
+source $__REPO_PATH/configs/bash/.bashrc_extra
 alias tmux='tmux -f $__REPO_PATH/configs/tmux/.tmux.conf'
 alias vim='vim -u $__REPO_PATH/configs/vim/.vimrc'
 alias code='code --user-data-dir $__REPO_PATH/configs/vscode/.config/Code'
