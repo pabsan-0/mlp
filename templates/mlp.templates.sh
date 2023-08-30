@@ -1,6 +1,6 @@
 
 mlp_template () {
-    local files_dir="$__REPO_PATH/templates/"
+    local files_dir="$__REPO_PATH/templates/templates"
     local target_dir="$PWD/"
 
     # Check if the /files/ directory exists
@@ -32,7 +32,7 @@ mlp_template () {
 
 _mlp_template_completion() {
     local cur="${COMP_WORDS[COMP_CWORD]}"
-    local files_dir="$__REPO_PATH/templates"
+    local files_dir="$__REPO_PATH/templates/templates"
     local file_list=$(ls "$files_dir")
 
     COMPREPLY=($(compgen -W "$file_list" -- "$cur"))
