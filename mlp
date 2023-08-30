@@ -4,11 +4,11 @@
 #     *) return;;
 # esac
 
-# Assert that this is a bash terminal
-if [ -z "${BASH_VERSION-}" ]; then
-  printf '%s\n' 'oh-my-bash: This is not a Bash. Use MLP with Bash 3.2 or higher.' >&2
-  return 1
-fi
+# Assert that this is a bash terminal - not needed since we run a subshell
+# if [ -z "${BASH_VERSION-}" ]; then
+#   printf '%s\n' 'oh-my-bash: This is not a Bash. Use MLP with Bash 3.2 or higher.' >&2
+#   return 1
+# fi
 
 # Resolve this file's path, even if it is a symlink
 # https://stackoverflow.com/questions/59895
