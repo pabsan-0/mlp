@@ -1,0 +1,26 @@
+version: '2.3'
+
+services:         
+    deepstream:
+        image: nvds-ros 
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        container_name: nvds-ros 
+        privileged: true
+        runtime: nvidia
+        shm_size: 64gb
+        tty: true
+        stdin_open: true
+        network_mode: host
+        working_dir: /ws
+        environment:
+            - XAUTHORITY=$XAUTHORITY
+            - DISPLAY=$DISPLAY
+        volumes:
+            - $XAUTHORITY:$XAUTHORITY
+            - /tmp/.X11-unix:/tmp/.X11-unix
+            - /dev:/dev      
+            - $PWD/shared/weights:/weights
+            - $PWD/shared/media:/media
+            - $PWD/nvds:/ws
