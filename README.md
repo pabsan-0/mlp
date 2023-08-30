@@ -7,6 +7,8 @@ Strongly inspired from [oh-my-bash](https://github.com/ohmybash/oh-my-bash).
 
 ## Dependencies
 
+Not really dependencies, but tooling to be used:
+
 ```
 sudo apt install  \
     tmux          \
@@ -14,6 +16,7 @@ sudo apt install  \
     vim           \
     sudo          \
     ;
+snap install code --classic
 ```
 
 ## Usage
