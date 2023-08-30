@@ -39,7 +39,7 @@ Useful or faster bash-driven completions for several software. Some are new, som
 
 A set of sourceable dotfiles, or configuration files, for my favourite software. Supported by aliases that replace the original commands and add a flag to pass custom config files.
 
-- Bash: holds a custom `.bashrc_extra` file with additional custom `.bashrc` lines. This file is simply sourced when `mlp` launches. Source yourself for the same effect. For now, the systems default `.bashrc` is also run from `mlp`, hence the prefix `_extra`. 
+- Bash: holds a custom `.bashrc_extra` file with additional custom `.bashrc` lines. This file is simply sourced when `mlp` launches. Source yourself for the same effect. For now, the systems default `.bashrc` is already run from `mlp`, hence the prefix `_extra`. 
 - Tmux: passes a custom `.tmux.conf` as argument to `tmux` 
 - Vim: passes a custom `.vimrc` as argument to `tmux`. Holds a dir to store swapfiles and other cache.
 - Vscode: carries two files `keybindings.json` and `settings.json`, and also a dir where a disposable `vscode` user directory will be created. Of course, you must invoke `code` from a terminal for this to work. 
