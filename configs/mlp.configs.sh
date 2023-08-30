@@ -19,10 +19,6 @@ __mlp_vscode_clean () {
 }
  
 function __mlp_vscode_setup () {
-    shopt -s extglob
-    
     ln -sf $__MLP_PATH/configs/vscode/*.json  $__MLP_PATH/configs/vscode/.config/Code/User 
-
-    shopt -u extglob
 }
 __mlp_vscode_setup
