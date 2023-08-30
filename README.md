@@ -20,7 +20,7 @@ sudo apt install  \
 
 To enter a subshell with all the packed tooling, simply run  `./mlp`. You may add the repo root to `$PATH` or symlink `mlp` into a `$PATH` dir for system-wide access.
 
-To include any of the packed components in your current shell (no subshell), simply `source` them.
+To include any of the packed components in your current shell (no subshell), simply `source` them. In this case, you should have `$__MLP_PATH` set to the root of this repo.
 
 ## Contents
 
