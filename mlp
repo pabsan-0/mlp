@@ -18,19 +18,19 @@ while [ -L "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
     SOURCE=$(readlink "$SOURCE")
     [[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 done
-__REPO_PATH=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+__MLP_PATH=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 
 # https://stackoverflow.com/questions/7120426/
 bash --rcfile <(echo ". ~/.bashrc             ; 
     
-    __REPO_PATH=$__REPO_PATH                  ;
-    . $__REPO_PATH/lib/mlp.source.sh          ; 
+    __MLP_PATH=$__MLP_PATH                  ;
+    . $__MLP_PATH/lib/mlp.source.sh          ; 
 
-    mlp_source_dir $__REPO_PATH/lib/          ;
-    mlp_source_dir $__REPO_PATH/aliases/      ;
-    mlp_source_dir $__REPO_PATH/completions/  ;
-    mlp_source_dir $__REPO_PATH/configs/      ;
-    mlp_source_dir $__REPO_PATH/templates/    ;
-    mlp_source_dir $__REPO_PATH/themes/       ;
-    mlp_source_dir $__REPO_PATH/themes/themes ;
+    mlp_source_dir $__MLP_PATH/lib/          ;
+    mlp_source_dir $__MLP_PATH/aliases/      ;
+    mlp_source_dir $__MLP_PATH/completions/  ;
+    mlp_source_dir $__MLP_PATH/configs/      ;
+    mlp_source_dir $__MLP_PATH/templates/    ;
+    mlp_source_dir $__MLP_PATH/themes/       ;
+    mlp_source_dir $__MLP_PATH/themes/themes ;
 ")
