@@ -6,3 +6,4 @@ sudo apt install  \
     fzf           \
     ripgrep       \
     ;
+# WARNING! fzf and ripgrep not available in jetson repos

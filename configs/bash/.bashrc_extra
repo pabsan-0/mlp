@@ -1,1 +1,9 @@
+## For compatibility, system/user default .bashrc is run as usual,
+## this file is sourced inmediatly after
+
 echo "Good day from .bashrc_extra!"
+
+bind '"\C-f":"$__MLP_PATH/configs/tmux/bin/tmux-sessionizer\n"'
+bind '"\C-^":"$__MLP_PATH/configs/tmux/bin/tmux-sessionizer $HOME \n"' # Ctrl Shift `
+
+export FZF_DEFAULT_COMMAND="find \! \( -path '*/.git' -prune \) -printf '%P\n'"
