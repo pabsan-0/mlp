@@ -32,5 +32,5 @@ bash --rcfile <(echo ". ~/.bashrc             ;
     mlp_source_dir $__MLP_PATH/configs/      ;
     mlp_source_dir $__MLP_PATH/templates/    ;
     mlp_source_dir $__MLP_PATH/themes/       ;
-    mlp_source_dir $__MLP_PATH/themes/themes ;
+    . $__MLP_PATH/themes/themes/ip_mlp.theme.sh ;
 ")
