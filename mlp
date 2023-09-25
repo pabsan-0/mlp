@@ -22,7 +22,8 @@ __MLP_PATH=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 
 # https://stackoverflow.com/questions/7120426/
 bash --rcfile <(echo ". ~/.bashrc             ; 
-    
+
+    export SHELL=/bin/bash                   ;
     export __MLP_PATH=$__MLP_PATH            ;
     . $__MLP_PATH/lib/mlp.source.sh          ; 
 
