@@ -3,4 +3,6 @@ sudo apt install  \
     tmuxinator    \
     vim           \
     sudo          \
+    fzf           \
+    ripgrep       \
     ;

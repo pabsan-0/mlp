@@ -1,0 +1,25 @@
+#!/usr/bin/env bash 
+#!/usr/bin/env -S bash -x
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(find ~/workspace ~/toolbox ~/temp /opt/catec -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+selected_name=$(basename "$selected" | tr . _)
+tmux_running=$(pgrep tmux)
+
+# Create session or attach if exists (-A), in detached mode (-d)
+tmux new-session -dAs $selected_name -c $selected
+
+# Either switch or attach whether we're inside tmux
+if [[ -n $TMUX ]] ; then
+    tmux switch-client -t $selected_name
+else 
+    tmux attach -t $selected_name
+fi
