@@ -1,6 +1,9 @@
 #!/usr/bin/env bash 
 #!/usr/bin/env -S bash -x
 
+# Import tmux alias!
+source "$__MLP_PATH/configs/mlp.configs.sh"
+
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
